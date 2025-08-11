@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Footer, Navbar } from "../components";
 const AboutPage = () => {
   return (
@@ -24,36 +24,69 @@ const AboutPage = () => {
         </p>
 
         <h2 className="text-center py-4">Our Products</h2>
-        <div className="row">
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
+        <div className="row justify-content-center">
+          <div className="col-md-2 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img
+                className="card-img-top img-fluid"
+                src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt=""
+                height={160}
+              />
               <div className="card-body">
                 <h5 className="card-title text-center">Mens's Clothing</h5>
               </div>
             </div>
           </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
+          <div className="col-md-2 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img
+                className="card-img-top img-fluid"
+                src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt=""
+                height={160}
+              />
               <div className="card-body">
                 <h5 className="card-title text-center">Women's Clothing</h5>
               </div>
             </div>
           </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
+          <div className="col-md-2 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img
+                className="card-img-top img-fluid"
+                src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt=""
+                height={160}
+              />
               <div className="card-body">
                 <h5 className="card-title text-center">Jewelery</h5>
               </div>
             </div>
           </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
+          <div className="col-md-2 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img
+                className="card-img-top img-fluid"
+                src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt=""
+                height={160}
+              />
               <div className="card-body">
                 <h5 className="card-title text-center">Electronics</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-2 col-sm-6 mb-3 px-3">
+            <div className="card h-100">
+              <img
+                className="card-img-top img-fluid"
+                src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600"
+                alt="Sports Equipment"
+                height={160}
+              />
+              <div className="card-body">
+                <h5 className="card-title text-center">Sports</h5>
               </div>
             </div>
           </div>
@@ -61,7 +94,7 @@ const AboutPage = () => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;
