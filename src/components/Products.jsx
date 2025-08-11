@@ -26,31 +26,56 @@ const Products = () => {
       setLoading(true);
       try {
         const response = await fetch("https://fakestoreapi.com/products/");
-        const fakeStoreProducts = await response.json();
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const responseText = await response.text();
+        if (!responseText) {
+          throw new Error("Empty response from server");
+        }
+
+        let fakeStoreProducts;
+        try {
+          fakeStoreProducts = JSON.parse(responseText);
+        } catch (parseError) {
+          console.error("JSON Parse Error:", parseError);
+          throw new Error("Invalid JSON response from server");
+        }
+
+        if (!Array.isArray(fakeStoreProducts)) {
+          throw new Error("Expected array of products from server");
+        }
 
         const allProducts = [...fakeStoreProducts, ...sportsProducts];
 
         if (componentMounted) {
           setData(allProducts);
           setFilter(allProducts);
-          setLoading(false);
         }
       } catch (error) {
         console.error("Error fetching products:", error);
         // Fallback to only sports products if API fails
         if (componentMounted) {
+          toast.error(
+            "Could not fetch external products. Showing local products only."
+          );
           setData(sportsProducts);
           setFilter(sportsProducts);
+        }
+      } finally {
+        if (componentMounted) {
           setLoading(false);
         }
       }
-
-      return () => {
-        componentMounted = false;
-      };
     };
 
     getProducts();
+
+    return () => {
+      componentMounted = false;
+    };
   }, []);
 
   const Loading = () => {
@@ -179,7 +204,31 @@ const Products = () => {
                     ))}
                 </ul>
                 <div className="card-body">
-                  {product.inStock ? (
+                  {product.category === "sports" ? (
+                    product.inStock ? (
+                      <>
+                        <Link
+                          to={"/product/" + product.id}
+                          className="btn btn-dark m-1"
+                        >
+                          Buy Now
+                        </Link>
+                        <button
+                          className="btn btn-dark m-1"
+                          onClick={() => {
+                            toast.success("Added to cart");
+                            addProduct(product);
+                          }}
+                        >
+                          Add to Cart
+                        </button>
+                      </>
+                    ) : (
+                      <button className="btn btn-danger m-1" disabled>
+                        Out of Stock
+                      </button>
+                    )
+                  ) : (
                     <>
                       <Link
                         to={"/product/" + product.id}
@@ -197,10 +246,6 @@ const Products = () => {
                         Add to Cart
                       </button>
                     </>
-                  ) : (
-                    <button className="btn btn-danger m-1" disabled>
-                      Out of Stock
-                    </button>
                   )}
                 </div>
               </div>
