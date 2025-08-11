@@ -156,8 +156,27 @@ const Products = () => {
                 </div>
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item lead">$ {product.price}</li>
-                  {/* <li className="list-group-item">Dapibus ac facilisis in</li>
-                    <li className="list-group-item">Vestibulum at eros</li> */}
+                  {product.variants &&
+                    product.variants.map((variant) => (
+                      <li key={variant.id} className="list-group-item">
+                        <div className="d-flex align-items-center">
+                          <label
+                            className="me-2 fw-bold"
+                            style={{ minWidth: "80px" }}
+                          >
+                            {variant.name}:
+                          </label>
+                          <select className="form-select form-select-sm">
+                            <option value="">Select {variant.name}</option>
+                            {variant.options.map((option, idx) => (
+                              <option key={idx} value={option}>
+                                {option}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </li>
+                    ))}
                 </ul>
                 <div className="card-body">
                   {product.inStock ? (

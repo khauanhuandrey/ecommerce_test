@@ -9,6 +9,10 @@ export const sportsProducts = [
     image:
       "https://images.unsplash.com/photo-1552667466-07770ae110d0?w=800&auto=format&fit=crop",
     inStock: false,
+    variants: [
+      { id: 1, name: "Size", options: ["Size 3", "Size 4", "Size 5"] },
+      { id: 2, name: "Color", options: ["Black/White", "Yellow", "Blue"] },
+    ],
   },
   {
     id: 22,
@@ -19,6 +23,10 @@ export const sportsProducts = [
     category: "sports",
     image: "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=800",
     inStock: true,
+    variants: [
+      { id: 1, name: "Size", options: ["Size 5", "Size 6", "Size 7"] },
+      { id: 2, name: "Type", options: ["Indoor", "Outdoor", "Indoor/Outdoor"] },
+    ],
   },
   {
     id: 23,
@@ -29,5 +37,9 @@ export const sportsProducts = [
     category: "sports",
     image: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800",
     inStock: true,
+    variants: [
+      { id: 1, name: "Thickness", options: ["4mm", "6mm", "8mm"] },
+      { id: 2, name: "Color", options: ["Purple", "Blue", "Black", "Pink"] },
+    ],
   },
 ];
