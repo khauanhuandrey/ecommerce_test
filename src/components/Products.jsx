@@ -105,10 +105,20 @@ const Products = () => {
           >
             Electronics
           </button>
+          <button
+            className="btn btn-outline-dark btn-sm m-2"
+            onClick={() => filterProduct("sports")}
+          >
+            Sports
+          </button>
         </div>
 
-        {filter.map((product) => {
-          return (
+        {filter.length === 0 ? (
+          <div className="col-12 text-center">
+            <h3>No products found in this category</h3>
+          </div>
+        ) : (
+          filter.map((product) => (
             <div
               id={product.id}
               key={product.id}
@@ -153,8 +163,8 @@ const Products = () => {
                 </div>
               </div>
             </div>
-          );
-        })}
+          ))
+        )}
       </>
     );
   };
