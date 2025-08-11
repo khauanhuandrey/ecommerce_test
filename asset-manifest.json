@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ecommerce/static/css/main.706a597f.css",
-    "main.js": "/ecommerce/static/js/main.64d7b344.js",
-    "static/media/fontawesome-webfont.svg?v=4.7.0": "/ecommerce/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
-    "static/media/fontawesome-webfont.eot": "/ecommerce/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
-    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/ecommerce/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
-    "static/media/fontawesome-webfont.woff?v=4.7.0": "/ecommerce/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
-    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/ecommerce/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
-    "index.html": "/ecommerce/index.html",
-    "main.706a597f.css.map": "/ecommerce/static/css/main.706a597f.css.map",
-    "main.64d7b344.js.map": "/ecommerce/static/js/main.64d7b344.js.map"
+    "main.css": "/ecommerce_test/static/css/main.1000f520.css",
+    "main.js": "/ecommerce_test/static/js/main.64d7b344.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/ecommerce_test/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/ecommerce_test/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/ecommerce_test/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/ecommerce_test/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/ecommerce_test/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "index.html": "/ecommerce_test/index.html",
+    "main.1000f520.css.map": "/ecommerce_test/static/css/main.1000f520.css.map",
+    "main.64d7b344.js.map": "/ecommerce_test/static/js/main.64d7b344.js.map"
   },
   "entrypoints": [
-    "static/css/main.706a597f.css",
+    "static/css/main.1000f520.css",
     "static/js/main.64d7b344.js"
   ]
 }
