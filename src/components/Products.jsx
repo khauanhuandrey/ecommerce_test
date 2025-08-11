@@ -7,6 +7,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import { sportsProducts } from "../data/mockProducts";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -23,11 +24,25 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products/");
-      if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
-        setLoading(false);
+      try {
+        const response = await fetch("https://fakestoreapi.com/products/");
+        const fakeStoreProducts = await response.json();
+
+        const allProducts = [...fakeStoreProducts, ...sportsProducts];
+
+        if (componentMounted) {
+          setData(allProducts);
+          setFilter(allProducts);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        // Fallback to only sports products if API fails
+        if (componentMounted) {
+          setData(sportsProducts);
+          setFilter(sportsProducts);
+          setLoading(false);
+        }
       }
 
       return () => {
