@@ -8,6 +8,7 @@ export const sportsProducts = [
     category: "sports",
     image:
       "https://images.unsplash.com/photo-1552667466-07770ae110d0?w=800&auto=format&fit=crop",
+    inStock: false,
   },
   {
     id: 22,
@@ -17,6 +18,7 @@ export const sportsProducts = [
       "Indoor/outdoor basketball with superior grip and durability. Official size and weight, perfect for professional play or practice.",
     category: "sports",
     image: "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=800",
+    inStock: true,
   },
   {
     id: 23,
@@ -26,5 +28,6 @@ export const sportsProducts = [
       "Extra thick yoga mat with perfect cushioning and non-slip surface. Eco-friendly material with carrying strap included.",
     category: "sports",
     image: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800",
+    inStock: true,
   },
 ];

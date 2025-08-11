@@ -160,21 +160,29 @@ const Products = () => {
                     <li className="list-group-item">Vestibulum at eros</li> */}
                 </ul>
                 <div className="card-body">
-                  <Link
-                    to={"/product/" + product.id}
-                    className="btn btn-dark m-1"
-                  >
-                    Buy Now
-                  </Link>
-                  <button
-                    className="btn btn-dark m-1"
-                    onClick={() => {
-                      toast.success("Added to cart");
-                      addProduct(product);
-                    }}
-                  >
-                    Add to Cart
-                  </button>
+                  {product.inStock ? (
+                    <>
+                      <Link
+                        to={"/product/" + product.id}
+                        className="btn btn-dark m-1"
+                      >
+                        Buy Now
+                      </Link>
+                      <button
+                        className="btn btn-dark m-1"
+                        onClick={() => {
+                          toast.success("Added to cart");
+                          addProduct(product);
+                        }}
+                      >
+                        Add to Cart
+                      </button>
+                    </>
+                  ) : (
+                    <button className="btn btn-danger m-1" disabled>
+                      Out of Stock
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
